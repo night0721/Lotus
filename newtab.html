@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ń1ght</title>
+    <link
+      rel="icon"
+      href="https://avatars.githubusercontent.com/u/77528305?v=4"
+    />
+  </head>
+  <body>
+    <video
+      draggable="false"
+      loop=""
+      playsinline=""
+      class="absolute object-cover w-full h-full"
+      autoplay=""
+      style="
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        max-width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      "
+      id="video"
+    >
+      <source src="" type="video/mp4" id="source" />
+    </video>
+    <div class="time">
+      <div class="clock" data-time=""></div>
+    </div>
+
+    <div class="container">
+      <div class="bio">Ń1ght#0001</div>
+    </div>
+
+    <style>
+      .clock {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: rainbow 5s infinite;
+        font-size: 200px;
+        font-weight: 400;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bio {
+        align-items: center;
+        justify-content: center;
+        font-size: 45px;
+        font-weight: lighter;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        bottom: 40px;
+        position: absolute;
+        color: #bae6fd;
+        animation: rainbow 10s infinite;
+      }
+
+      @keyframes rainbow {
+        0% {
+          color: rgb(239, 119, 117);
+        }
+        14% {
+          color: rgb(253, 169, 128);
+        }
+        28% {
+          color: rgb(248, 239, 104);
+        }
+        42% {
+          color: rgb(139, 255, 153);
+        }
+        57% {
+          color: rgb(123, 123, 250);
+        }
+        71% {
+          color: rgb(182, 109, 234);
+        }
+        85% {
+          color: rgb(251, 171, 251);
+        }
+        100% {
+          color: rgb(240, 98, 176);
+        }
+      }
+    </style>
+  </body>
+  <script src="background.js"></script>
+</html>
