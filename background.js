@@ -50,6 +50,7 @@ video.addEventListener("ended", chooseSong);
 chrome.storage.sync.get("options", function (data) {
   if (data.options.static) {
     video.style.display = "none";
+    video.muted = true;
     // document.getElementById("bg").style.display = "block";
     // document.getElementsByClassName("clock")[0].style["align-items"] =
     //   "flex-start";
@@ -66,12 +67,12 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     chrome.storage.sync.set({ options: message.options }, function () {
       if (message.options.static) {
         video.style.display = "none";
+        video.muted = true;
         // document.getElementById("bg").style.display = "block";
         // document.getElementsByClassName("clock")[0].style["align-items"] =
         //   "flex-start";
       } else {
         video.style.display = "block";
-        video.muted = true;
         // document.getElementById("bg").style.display = "none";
         // document.getElementsByClassName("clock")[0].style["align-items"] =
         //   "center";
