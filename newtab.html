@@ -9,6 +9,22 @@
     />
   </head>
   <body>
+    <div>
+      <img
+        src="https://cdn.discordapp.com/attachments/842014909264953354/1111451318922530877/nights-yt-banner.png"
+        style="
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          max-width: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+        "
+        id="bg"
+      />
+    </div>
     <video
       draggable="false"
       loop=""
@@ -37,6 +53,7 @@
     </div>
 
     <style>
+      @import url("https://fonts.googleapis.com/css?family=Aldrich");
       .clock {
         margin: 0;
         display: flex;
@@ -49,9 +66,10 @@
         width: 100%;
         height: 100%;
         animation: rainbow 5s infinite;
-        font-size: 200px;
-        font-weight: 400;
-        font-family: "Courier New", Courier, monospace;
+        letter-spacing: 7px;
+        font-size: 100px;
+        font-weight: 200;
+        font-family: Aldrich;
       }
 
       .container {

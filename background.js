@@ -1,13 +1,12 @@
 function updateTime() {
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  var seconds = currentTime.getSeconds();
-  document.getElementsByClassName("clock")[0].innerHTML = `${
-    (hours < 10 ? "0" : "") + hours
-  }:${(minutes < 10 ? "0" : "") + minutes}:${
-    (seconds < 10 ? "0" : "") + seconds
-  }`;
+  var date = new Date();
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+  h = h < 10 ? "0" + h : h;
+  m = m < 10 ? "0" + m : m;
+  s = s < 10 ? "0" + s : s;
+  document.getElementsByClassName("clock")[0].innerHTML = `${h}:${m}:${s}`;
 }
 updateTime();
 setInterval(updateTime, 1000);
@@ -37,3 +36,36 @@ function chooseSong() {
 }
 chooseSong();
 video.addEventListener("ended", chooseSong);
+chrome.storage.sync.get("options", function (data) {
+  if (data.options.static) {
+    video.style.display = "none";
+    document.getElementById("bg").style.display = "block";
+    document.getElementsByClassName("clock")[0].style["align-items"] =
+      "flex-start";
+    document.getElementsByClassName("clock")[0].style.top = "100px";
+  } else {
+    video.style.display = "block";
+    document.getElementById("bg").style.display = "none";
+    document.getElementsByClassName("clock")[0].style["align-items"] = "center";
+  }
+});
+
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  if (message.type === "updateOptions") {
+    chrome.storage.sync.set({ options: message.options }, function () {
+      if (message.options.static) {
+        video.style.display = "none";
+        document.getElementById("bg").style.display = "block";
+        document.getElementsByClassName("clock")[0].style["align-items"] =
+          "flex-start";
+      } else {
+        video.style.display = "block";
+        video.muted = true;
+        document.getElementById("bg").style.display = "none";
+        document.getElementsByClassName("clock")[0].style["align-items"] =
+          "center";
+      }
+      sendResponse({ success: true });
+    });
+  }
+});
