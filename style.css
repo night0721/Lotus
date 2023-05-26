@@ -1,0 +1,107 @@
+@import "https://fonts.googleapis.com/css?family=Nova+Mono|Eczar|Aldrich";
+#body {
+  background-color: black;
+}
+
+#div1 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transform: translateY(33%); */
+}
+
+#time {
+  /* margin: 0; */
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  color: #133887;
+  font-family: "Aldrich", monospace;
+  font-size: 10vw;
+  text-align: center;
+  text-shadow: 0px 0px 20px #5f27c7;
+  letter-spacing: 7px;
+}
+
+#date {
+  /* stick it to bottom */
+  /* margin: 0; */
+  position: absolute;
+
+  bottom: 200px;
+  left: 400px;
+  /* width: 100%;
+  height: 100%; */
+
+  color: #12a896;
+  font-family: "Eczar", serif;
+  font-size: 10vmin;
+  text-align: center;
+  text-shadow: 0px 0px 20px blue;
+}
+.clock {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rainbow 5s infinite;
+  letter-spacing: 7px;
+  font-size: 100px;
+  font-weight: 200;
+  font-family: Aldrich;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: lighter;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  bottom: 40px;
+  position: absolute;
+  color: #bae6fd;
+  animation: rainbow 10s infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    color: rgb(239, 119, 117);
+  }
+  14% {
+    color: rgb(253, 169, 128);
+  }
+  28% {
+    color: rgb(248, 239, 104);
+  }
+  42% {
+    color: rgb(139, 255, 153);
+  }
+  57% {
+    color: rgb(123, 123, 250);
+  }
+  71% {
+    color: rgb(182, 109, 234);
+  }
+  85% {
+    color: rgb(251, 171, 251);
+  }
+  100% {
+    color: rgb(240, 98, 176);
+  }
+}
